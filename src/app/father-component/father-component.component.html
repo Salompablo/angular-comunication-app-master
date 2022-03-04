@@ -1,0 +1,15 @@
+<div class="bg-red pad-20">
+  <h1>Father Component</h1>
+  <!-- Input sobre el que escribimos y la función declarada en el .ts -->
+  <input type="text" #fatherInput (keyup)="keyUp(fatherInput.value)"/>
+  <div>
+    <!-- pasamos al hijo el valor de la variable inputText -->
+    <!-- El valor de la izquierda es el que recibe -->
+    <app-son-component
+      [text]="value"
+      (emitMessage)="handleMessage($event)"
+    ></app-son-component>
+    <h1>Mensaje de mi hijo ⬇️</h1>
+    <p>{{ sonMessage }}</p>
+  </div>
+</div>
